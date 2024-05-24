@@ -21,4 +21,6 @@ urlpatterns = [
 
     path('public_profile/<int:user_id>/', views.public_profile, name='public_profile'),
     path('edit_profile/', views.edit_profile, name='edit_profile'),
+
+    path('service_form/', views.handle_service, name='service_form'),
 ]

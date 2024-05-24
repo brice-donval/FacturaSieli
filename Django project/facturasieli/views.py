@@ -32,3 +32,10 @@ from facturasieli.views.registration.transitions import goodbye
 
 from facturasieli.views.profile import public_profile
 from facturasieli.views.profile import edit_profile
+
+
+# --------------------------------------------------------------------------- #
+#                                S E R V I C E                                #
+# --------------------------------------------------------------------------- #
+
+from facturasieli.views.service import handle_service

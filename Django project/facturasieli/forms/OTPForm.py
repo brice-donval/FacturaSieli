@@ -1,11 +1,11 @@
-# facturasieli/forms/OTPModelForm.py
+# facturasieli/forms/OTPForm.py
 from django.forms import ModelForm
 from django.utils.translation import gettext_lazy as _
 
-from facturasieli.models import OTPModel
+from facturasieli.models import OTP
 
 
-class OTPModelForm(ModelForm):
+class OTPForm(ModelForm):
     class Meta:
-        model = OTPModel
+        model = OTP
         fields = ['otp']

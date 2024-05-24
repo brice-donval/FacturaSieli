@@ -1,2 +1,2 @@
-from .OTPModelForm import OTPModelForm
+from .OTPForm import OTPForm
 from .ProfileForm import ProfileForm

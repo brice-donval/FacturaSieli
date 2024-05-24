@@ -6,16 +6,16 @@ from django.urls import reverse
 from django.utils import timezone
 from django.utils.translation import gettext_lazy as _
 
-from facturasieli.forms import OTPModelForm
-from facturasieli.models import OTPModel
+from facturasieli.forms import OTPForm
+from facturasieli.models import OTP
 
 
 def otp_validation(request: HttpRequest):
     if request.method == 'GET':
-        form = OTPModelForm()
+        form = OTPForm()
         return render(request, 'registration/otp_validation.html', {'form': form})
 
-    form = OTPModelForm(request.POST)
+    form = OTPForm(request.POST)
     if not form.is_valid():
         return render(request, 'registration/otp_validation.html', {'form': form})
 
@@ -23,7 +23,7 @@ def otp_validation(request: HttpRequest):
     pretended_user_id = request.session.get('pretended_user_id', '')
     if not pretended_user_id:
         return HttpResponseRedirect(reverse('facturasieli:custom_log_in'))
-    otp_instance = OTPModel.objects.filter(
+    otp_instance = OTP.objects.filter(
         otp=user_otp,
         user=pretended_user_id).first()
     if otp_instance:

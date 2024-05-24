@@ -2,10 +2,10 @@
 from django.core.mail import send_mail
 from django.utils.translation import gettext_lazy as _
 
-from facturasieli.models import OTPModel
+from facturasieli.models import OTP
 
 
-def send_otp_mail(otp_instance: OTPModel):
+def send_otp_mail(otp_instance: OTP):
     subject: str =  'FacturaSieli - ' + _('Authentication')
     message: str =  _('Your one time password: - ') + otp_instance.otp
     from_email: str =  'noreply@facturasieli.com'

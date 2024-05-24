@@ -1,0 +1,56 @@
+{% load static %}
+{% load i18n %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>FacturaSieli</title>
+    </head>
+    <body>
+        <table width="100%">
+            <tr>
+                <td width="20%">&nbsp;</td>
+                <td>
+                    <div align="center">
+                        <h1>✨ 📒 &nbsp; {% translate 'Welcome to FacturaSieli' %} {{ user.username }}{% translate '!' %} &nbsp; 📒 ✨</h1>
+                    </div>
+                    <br />
+                    <div>
+                        {% block content %}
+                        {% endblock %}
+                    </div>
+                    <br />
+                    <br />
+                    <hr />
+                    <div>
+                        <table width="100%">
+                            <tr>
+                                <td>
+                                    <a href="{% url 'facturasieli:index' %}"><button>🏠 {% translate 'Home' %}</button></a>
+                                    {% if user.is_authenticated %}
+                                        &nbsp;
+                                        <a href="{% url 'facturasieli:public_profile' user.id %}"><button>👤 {% translate 'My public profile' %}</button></a>
+                                        &nbsp;|&nbsp;
+                                        <a href="{% url 'facturasieli:log_out' %}"><button>↪️ {% translate 'Disconnection' %}</button></a>
+                                    {% else %}
+                                        &nbsp;|&nbsp;
+                                        <a href="{% url 'facturasieli:custom_log_in' %}"><button>🔐 {% translate 'Connection' %}</button></a>
+                                    {% endif %}
+                                </td>
+                                {% if user.username %}
+                                    <td align="right">
+                                        Langue :&nbsp;
+                                        <a href="/fr/"><button>🇫🇷 {% translate 'French' %}</button></a>
+                                        &nbsp;
+                                        <a href="/en/"><button>🇬🇧 {% translate 'English' %}</button></a>
+                                    </td>
+                                {% endif %}
+                            </tr>
+                        </table>
+                    </div>
+                </td>
+                <td width="20%">&nbsp;</td>
+            </tr>
+        </table>
+    </body>
+</html>

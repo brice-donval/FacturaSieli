@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% load i18n %}
+
+{% block content %}
+    <h2>{% translate 'Your account has been created!' %}</h2>
+    <a href="{% url 'facturasieli:custom_log_in' %}"><button>🔐 {% translate 'Go back to login page' %}</button></a>
+{% endblock %}

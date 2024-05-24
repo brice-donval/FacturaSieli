@@ -1,7 +1,6 @@
 # facturasieli/urls.py
 from django.contrib.auth import views as auth_views
 from django.urls import path
-
 from facturasieli import views
 
 
@@ -21,4 +20,6 @@ urlpatterns = [
 
     path('public_profile/<int:user_id>/', views.public_profile, name='public_profile'),
     path('edit_profile/', views.edit_profile, name='edit_profile'),
+
+    path('service_form/', views.handle_service, name='service_form'),
 ]

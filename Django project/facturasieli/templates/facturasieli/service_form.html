@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block content %}
+
+<h2 class="text-center mt-3">Create a new service</h2>
+<div class="d-flex justify-content-center mt-4">
+    <div class="w-50">
+        <a href="{% url 'facturasieli:index' %}" class="btn btn-warning mb-4">{% translate 'Back' %}</a>
+        <form action="{% url 'facturasieli:service_form' %}" method="post">
+            <!-- {% csrf_token %} -->
+            <!-- {{form.as_p}} -->
+            <button type="submit" class="btn btn-success" value="List">{% translate 'Create' %}</button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,10 +1,11 @@
 # facturasieli/models/User.py
 from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
+from django.utils.translation import gettext_lazy as _
+
 from facturasieli.models.Company import Company
 from facturasieli.models.Role import Role
 
-from django.utils.translation import gettext_lazy as _
 
 class User(AbstractBaseUser):
     objects = BaseUserManager()

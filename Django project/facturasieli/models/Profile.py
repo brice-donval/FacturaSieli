@@ -1,8 +1,10 @@
 # facturasieli/models/Profile.py
 from django.contrib.auth.models import User
 from django.db import models
-from facturasieli.models.utils import get_avatar_path
 from django.utils.translation import gettext_lazy as _
+
+from facturasieli.models.utils import get_avatar_path
+
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)

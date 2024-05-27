@@ -1,7 +1,9 @@
 # facturasieli/models/Invoice.py
 from django.db import models
-from facturasieli.models.Address import Address
 from django.utils.translation import gettext_lazy as _
+
+from facturasieli.models.Address import Address
+
 
 class Invoice(models.Model):
     PENDING = 'Pending'

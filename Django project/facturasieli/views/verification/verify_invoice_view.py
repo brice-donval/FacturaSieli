@@ -1,10 +1,11 @@
 # facturasieli/views/verification/verify_invoice_view.py
 from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse
-from django.shortcuts import get_object_or_404, redirect, render
+from django.shortcuts import get_object_or_404, render
+from django.utils.translation import gettext_lazy as _
 
 from facturasieli.forms import VerificationForm
-from facturasieli.models import Invoice, Verification
+from facturasieli.models import Invoice
 
 
 @login_required

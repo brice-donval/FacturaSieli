@@ -2,6 +2,7 @@
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
+
 class Address(models.Model):
     number = models.IntegerField(_("Number"))
     street = models.CharField(_("Street"), max_length=255)

@@ -1,8 +1,10 @@
 # facturasieli/models/Verification.py
 from django.db import models
-from facturasieli.models.User import User
-from facturasieli.models.Invoice import Invoice
 from django.utils.translation import gettext_lazy as _
+
+from facturasieli.models.Invoice import Invoice
+from facturasieli.models.User import User
+
 
 class Verification(models.Model):
     invoice = models.ForeignKey(Invoice, on_delete=models.CASCADE, related_name='verifications')

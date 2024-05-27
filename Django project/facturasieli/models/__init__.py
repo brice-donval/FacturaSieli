@@ -8,3 +8,4 @@ from .Profile import Profile
 from .Role import Role
 from .Service import Service
 from .User import User
+from .Verification import Verification

@@ -1,10 +1,11 @@
+# facturasieli/views/service/service_form_view.py
 from django.shortcuts import render
 from django.utils.translation import gettext_lazy as _
-from ...forms.ServiceForm import ServiceForm
+
+from facturasieli.forms.ServiceForm import ServiceForm
+
 
 # author : Morice
-
-
 def handle_service(request):
     if request.method == 'POST':
         form =ServiceForm(request.POST)

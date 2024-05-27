@@ -1,3 +1,4 @@
+<!-- Author morice -->
 {% extends 'base.html' %}
 
 {% load static %}
@@ -9,8 +10,8 @@
         <div class="w-50">
             <a href="{% url 'facturasieli:index' %}" class="btn btn-warning mb-4">{% translate 'Back' %}</a>
             <form action="{% url 'facturasieli:service_form' %}" method="post">
-                <!-- {% csrf_token %} -->
-                <!-- {{form.as_p}} -->
+                {% csrf_token %}
+                {{form.as_p}}
                 <button type="submit" class="btn btn-success" value="List">{% translate 'Create' %}</button>
             </form>
         </div>

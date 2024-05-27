@@ -1,6 +1,9 @@
+# facturasieli/forms/ServiceForm.py
 from django import forms
-from ..models.Service import Service
 from django.utils.translation import gettext_lazy as _
+
+from facturasieli.models.Service import Service
+
 
 # Author Morice
 class ServiceForm(forms.ModelForm):

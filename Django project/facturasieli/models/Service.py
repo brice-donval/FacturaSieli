@@ -1,10 +1,10 @@
 # facturasieli/models/Service.py
 from django.db import models
+from django.utils.translation import gettext_lazy as _
 
 from facturasieli.models.Company import Company
 from facturasieli.models.Invoice import Invoice
 
-from django.utils.translation import gettext_lazy as _
 
 class Service(models.Model):
     DEMANDE_DE_FACTURATION_ENVOYEE = _('Invoice Request Sent')

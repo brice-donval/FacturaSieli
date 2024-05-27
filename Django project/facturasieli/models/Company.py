@@ -1,7 +1,9 @@
 # facturasieli/models/Company.py
 from django.db import models
-from facturasieli.models.Address import Address
 from django.utils.translation import gettext_lazy as _
+
+from facturasieli.models.Address import Address
+
 
 class Company(models.Model):
     siret = models.CharField(_("SIRET"), max_length=15)

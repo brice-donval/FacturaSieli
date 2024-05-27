@@ -1,5 +1,6 @@
-# forms.py
+# facturasieli/forms/VerificationForm.py
 from django import forms
+
 from facturasieli.models import Verification
 
 
@@ -12,5 +13,5 @@ class VerificationForm(forms.ModelForm):
         (1, 'Verified'),
         (2, 'rejected')
     ]
-    
+
     status = forms.ChoiceField(choices=STATUS_CHOICES, widget=forms.RadioSelect)

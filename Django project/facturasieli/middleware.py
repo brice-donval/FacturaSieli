@@ -17,7 +17,7 @@ class ProfileMiddleware:
 
     def __call__(self, request):
         if request.user.is_authenticated:
-            profile = Profile.objects.get(user=request.user)
+            profile = Profile.objects.get(email=request.user)
             profile.last_request_timestamp = timezone.now()
             request.profile = profile
         else:

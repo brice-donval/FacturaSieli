@@ -8,12 +8,12 @@
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
-from facturasieli.models import Invoice, User
+from facturasieli.models import Invoice, Profile
 
 
 class Verification(models.Model):
     invoice = models.ForeignKey(Invoice, on_delete=models.CASCADE, related_name='verifications')
-    verified_by = models.ForeignKey(User, on_delete=models.CASCADE, related_name='verifications_user')
+    verified_by = models.ForeignKey(Profile, on_delete=models.CASCADE, related_name='verifications_user')
     date_verified = models.DateTimeField(_("Date Verified"), auto_now_add=True)
     comments = models.TextField(_("Comments"))
 

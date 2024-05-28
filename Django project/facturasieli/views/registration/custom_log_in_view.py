@@ -2,7 +2,7 @@
 #                    F a c t u r a S i e l i   ( 2 0 2 4 )
 # ---------------------------------------------------------------------------
 # File   : facturasieli/views/registration/custom_log_in_view.py
-# Author : Brice
+# Author : Zineb
 # ---------------------------------------------------------------------------
 
 from django.contrib.auth import authenticate, login
@@ -22,18 +22,18 @@ def custom_log_in(request: HttpRequest):
         form = AuthenticationForm()
         return render(request, 'registration/custom_login.html', {'form': form})
     
-    form = AuthenticationForm(request, request.POST)
+    form = AuthenticationForm(request, data=request.POST)
     if not form.is_valid():
         return render(request, 'registration/custom_login.html', {'form': form})
 
     username = form.cleaned_data['username']
     password = form.cleaned_data['password']
-    user = authenticate(username=username, password=password)
-
+    user = authenticate(request, username=username, password=password)
+    
     if user is None:
         return render(request, 'registration/custom_login.html', {'form': form})
 
-    profile = get_object_or_404(Profile, user = user.id)
+    profile = get_object_or_404(Profile, email=username)
     if not profile.enable_2fa:
         login(request, user)
         return HttpResponseRedirect(reverse('facturasieli:index'))

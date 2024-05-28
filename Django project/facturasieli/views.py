@@ -39,3 +39,10 @@ from facturasieli.views.profile import edit_profile
 # --------------------------------------------------------------------------- #
 
 from facturasieli.views.service import handle_service
+
+
+# --------------------------------------------------------------------------- #
+#                       V E R I F I C A T I O N                               #
+# --------------------------------------------------------------------------- #
+
+from facturasieli.views.verification import verify_invoice_view

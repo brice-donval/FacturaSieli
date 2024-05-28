@@ -5,7 +5,7 @@
     <title>Verify Invoice</title>
 </head>
 <body>
-    <h1>Verify Invoice {{ invoice.invoice_number }}</h1>
+    <h3>Verify Invoice {{ invoice.invoice_number }}</h3>
     <form method="post">
         {% csrf_token %}
         {{ form.as_p }}

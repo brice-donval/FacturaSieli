@@ -4,6 +4,7 @@
 {% load i18n %}
 
 {% block content %}
+<div class="mt-4">
     <h2>{% translate 'Please enter your identifiers:' %}</h2>
     <form method="post" action="{% url 'facturasieli:custom_log_in' %}">
         {% csrf_token %}
@@ -14,4 +15,5 @@
     <br />
     <h2>{% translate 'You are not registered yet?' %}</h2>
     <a href="{% url 'facturasieli:register' %}"><button>👤 {% translate 'Create my account' %}</button></a>
+</div>
 {% endblock %}

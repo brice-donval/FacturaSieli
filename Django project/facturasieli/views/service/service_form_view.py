@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect,get_list_or_404
+from django.shortcuts import render, redirect
 from django.utils.translation import gettext_lazy as _
 from django.utils import timezone
 from django.contrib import messages

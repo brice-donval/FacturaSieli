@@ -24,6 +24,7 @@ urlpatterns = [
 
     path('service_form/', views.handle_service, name='service_form'),
     path('service/<int:company_id>/', views.display_service, name='service'),
+    path('show_service/<int:service_id>/', views.show_service, name='show_service'),
 
     path('invoices/<int:invoice_id>/verify/', views.verify_invoice_view, name='verify_invoice'),
 ]

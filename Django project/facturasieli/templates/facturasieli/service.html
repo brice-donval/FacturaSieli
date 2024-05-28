@@ -4,10 +4,11 @@
 {% load static %}
 {% load i18n %}
 
-{% block content %}   
-    <h2 class="text-center mt-3">{% translate 'Your services' %}</h2>
+{% block content %} 
+<div class="mt-4">   
+    <h3 class="text-center mt-3">{% translate 'Your services' %}</h3>
     <div class="d-flex justify-content-center mt-4">
-        <div class="w-75">
+        <div class="">
             <a href="{% url 'facturasieli:service_form' %}" class="btn btn-warning mb-4">{% translate 'Create' %}</a>
             <table class="table">
                 <thead>
@@ -37,4 +38,5 @@
               </table>
         </div>
     </div>
+</div>  
 {% endblock %}

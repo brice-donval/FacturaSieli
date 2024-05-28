@@ -1,4 +1,10 @@
-# facturasieli/models/Service.py
+# ---------------------------------------------------------------------------
+#                    F a c t u r a S i e l i   ( 2 0 2 4 )
+# ---------------------------------------------------------------------------
+# File   : facturasieli/models/Service.py
+# Author : Arnaud, Zineb
+# ---------------------------------------------------------------------------
+
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
@@ -19,7 +25,7 @@ class Service(models.Model):
     issue_date = models.DateField(_("Issue Date"))
     intervention_start_date = models.DateField(_("Intervention Start Date"))
     intervention_end_date = models.DateField(_("Intervention End Date"))
-    status = models.CharField(_("Status"), max_length=50, choices=STATUS_CHOICES)
+    status = models.CharField(_("Status"), max_length=50, choices=STATUS_CHOICES, default=DEMANDE_DE_FACTURATION_ENVOYEE)
     company_provider = models.ForeignKey(Company, on_delete=models.CASCADE, related_name='provided_services')
     company_client = models.ForeignKey(Company, on_delete=models.CASCADE, related_name='received_services')
     invoice = models.OneToOneField(Invoice, on_delete=models.CASCADE, related_name='service', null=True, blank=True)

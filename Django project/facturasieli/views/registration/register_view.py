@@ -1,3 +1,14 @@
+<<<<<<< HEAD
+=======
+# ---------------------------------------------------------------------------
+#                    F a c t u r a S i e l i   ( 2 0 2 4 )
+# ---------------------------------------------------------------------------
+# File   : facturasieli/views/registration/register_view.py
+# Author : Brice
+# ---------------------------------------------------------------------------
+
+from django.contrib.auth.forms import UserCreationForm
+>>>>>>> develop
 from django.http import HttpRequest, HttpResponseRedirect
 from django.shortcuts import render
 from django.urls import reverse

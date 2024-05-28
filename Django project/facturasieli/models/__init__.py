@@ -1,3 +1,10 @@
+# ---------------------------------------------------------------------------
+#                    F a c t u r a S i e l i   ( 2 0 2 4 )
+# ---------------------------------------------------------------------------
+# File   : facturasieli/models/__init__.py
+# Author : Team
+# ---------------------------------------------------------------------------
+
 from .Address import Address
 from .Company import Company
 from .Invoice import Invoice

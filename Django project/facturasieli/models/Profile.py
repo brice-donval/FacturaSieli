@@ -1,3 +1,14 @@
+<<<<<<< HEAD
+=======
+# ---------------------------------------------------------------------------
+#                    F a c t u r a S i e l i   ( 2 0 2 4 )
+# ---------------------------------------------------------------------------
+# File   : facturasieli/models/Profile.py
+# Author : Brice
+# ---------------------------------------------------------------------------
+
+from django.contrib.auth.models import User
+>>>>>>> develop
 from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
 from django.contrib.auth.models import User

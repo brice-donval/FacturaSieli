@@ -1,11 +1,17 @@
-<!-- verify_invoice.html -->
+<!---------------------------------------------------------------------------
+#                    F a c t u r a S i e l i   ( 2 0 2 4 )
+# ---------------------------------------------------------------------------
+# File   : facturasieli/templates/facturasieli/verification_form.html
+# Author : Zineb
+# -------------------------------------------------------------------------->
+
 <!DOCTYPE html>
 <html>
 <head>
     <title>Verify Invoice</title>
 </head>
 <body>
-    <h1>Verify Invoice {{ invoice.invoice_number }}</h1>
+    <h3>Verify Invoice {{ invoice.invoice_number }}</h3>
     <form method="post">
         {% csrf_token %}
         {{ form.as_p }}

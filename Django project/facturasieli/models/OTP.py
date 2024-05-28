@@ -1,4 +1,10 @@
-# facturasieli/models/OTP.py
+# ---------------------------------------------------------------------------
+#                    F a c t u r a S i e l i   ( 2 0 2 4 )
+# ---------------------------------------------------------------------------
+# File   : facturasieli/models/OTP.py
+# Author : Brice
+# ---------------------------------------------------------------------------
+
 from django.contrib.auth.models import User
 from django.db import models
 

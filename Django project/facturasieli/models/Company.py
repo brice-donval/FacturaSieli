@@ -1,8 +1,14 @@
-# facturasieli/models/Company.py
+# ---------------------------------------------------------------------------
+#                    F a c t u r a S i e l i   ( 2 0 2 4 )
+# ---------------------------------------------------------------------------
+# File   : facturasieli/models/Company.py
+# Author : Arnaud, Zineb
+# ---------------------------------------------------------------------------
+
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
-from facturasieli.models.Address import Address
+from facturasieli.models import Address
 
 
 class Company(models.Model):

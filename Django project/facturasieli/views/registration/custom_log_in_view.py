@@ -1,4 +1,14 @@
+<<<<<<< HEAD
 #facturasieli/views/registration/custom_log_in_view
+=======
+# ---------------------------------------------------------------------------
+#                    F a c t u r a S i e l i   ( 2 0 2 4 )
+# ---------------------------------------------------------------------------
+# File   : facturasieli/views/registration/custom_log_in_view.py
+# Author : Brice
+# ---------------------------------------------------------------------------
+
+>>>>>>> develop
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.forms import AuthenticationForm
 from django.http import HttpRequest, HttpResponseRedirect

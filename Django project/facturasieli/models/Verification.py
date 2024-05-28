@@ -1,9 +1,14 @@
-# facturasieli/models/Verification.py
+# ---------------------------------------------------------------------------
+#                    F a c t u r a S i e l i   ( 2 0 2 4 )
+# ---------------------------------------------------------------------------
+# File   : facturasieli/models/Verification.py
+# Author : Arnaud, Zineb
+# ---------------------------------------------------------------------------
+
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
-from facturasieli.models.Invoice import Invoice
-from facturasieli.models.User import User
+from facturasieli.models import Invoice, User
 
 
 class Verification(models.Model):

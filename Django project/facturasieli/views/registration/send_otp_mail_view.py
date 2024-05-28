@@ -1,4 +1,10 @@
-# facturasieli/views/registration/send_otp_mail_view.py
+# ---------------------------------------------------------------------------
+#                    F a c t u r a S i e l i   ( 2 0 2 4 )
+# ---------------------------------------------------------------------------
+# File   : facturasieli/views/registration/send_otp_mail_view.py
+# Author : Brice
+# ---------------------------------------------------------------------------
+
 from django.core.mail import send_mail
 from django.utils.translation import gettext_lazy as _
 

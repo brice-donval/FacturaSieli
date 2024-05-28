@@ -1,9 +1,17 @@
+<!---------------------------------------------------------------------------
+#                    F a c t u r a S i e l i   ( 2 0 2 4 )
+# ---------------------------------------------------------------------------
+# File   : facturasieli/templates/facturasieli/index.html
+# Author : Brice
+# -------------------------------------------------------------------------->
+
 {% extends 'base.html' %}
 
 {% load static %}
 {% load i18n %}
 
 {% block content %}
+<div class="mt-4">
     <img src="{{ request.profile.avatar.url }}" width="100px" height="100px" />
     <table>
         <tr style="vertical-align:top">
@@ -17,4 +25,5 @@
             </td>
         </tr>
     </table>
+</div>
 {% endblock %}

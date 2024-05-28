@@ -1,3 +1,13 @@
+<<<<<<< HEAD
+=======
+# ---------------------------------------------------------------------------
+#                    F a c t u r a S i e l i   ( 2 0 2 4 )
+# ---------------------------------------------------------------------------
+# File   : facturasieli/forms/ProfileForm.py
+# Author : Brice
+# ---------------------------------------------------------------------------
+
+>>>>>>> develop
 from django import forms
 from django.utils.translation import gettext_lazy as _
 from facturasieli.models import Profile, Role, Company

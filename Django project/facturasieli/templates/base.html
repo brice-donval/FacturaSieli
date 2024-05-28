@@ -31,6 +31,8 @@
                                         &nbsp;
                                         <a href="{% url 'facturasieli:public_profile' user.id %}"><button>👤 {% translate 'My public profile' %}</button></a>
                                         &nbsp;|&nbsp;
+                                        <a href="{% url 'facturasieli:service' 2 %}"><button>👤 {% translate 'My service' %}</button></a>
+                                        &nbsp;|&nbsp;
                                         <a href="{% url 'facturasieli:log_out' %}"><button>↪️ {% translate 'Disconnection' %}</button></a>
                                     {% else %}
                                         &nbsp;|&nbsp;

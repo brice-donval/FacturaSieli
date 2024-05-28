@@ -9,7 +9,7 @@ from facturasieli.models.Service import Service
 class ServiceForm(forms.ModelForm):
     class Meta:
         model = Service
-        fields = ["title", "description", "intervention_start_date", "intervention_end_date", "company_client"]  # Corrected typo here
+        fields = ["title", "description", "intervention_start_date", "intervention_end_date", "company_client"]  
         labels = {
             'title': _('Service Title:'),
             'description': _('Description:'),

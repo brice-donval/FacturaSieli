@@ -39,3 +39,4 @@ from facturasieli.views.profile import edit_profile
 # --------------------------------------------------------------------------- #
 
 from facturasieli.views.service import handle_service
+from facturasieli.views.service import display_service

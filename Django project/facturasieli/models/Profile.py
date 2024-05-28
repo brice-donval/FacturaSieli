@@ -1,4 +1,10 @@
-# facturasieli/models/Profile.py
+# ---------------------------------------------------------------------------
+#                    F a c t u r a S i e l i   ( 2 0 2 4 )
+# ---------------------------------------------------------------------------
+# File   : facturasieli/models/Profile.py
+# Author : Brice
+# ---------------------------------------------------------------------------
+
 from django.contrib.auth.models import User
 from django.db import models
 from django.utils.translation import gettext_lazy as _

@@ -1,4 +1,10 @@
-# facturasieli/views/registration/create_otp_view.py
+# ---------------------------------------------------------------------------
+#                    F a c t u r a S i e l i   ( 2 0 2 4 )
+# ---------------------------------------------------------------------------
+# File   : facturasieli/views/registration/create_otp_view.py
+# Author : Brice
+# ---------------------------------------------------------------------------
+
 import secrets
 
 from django.contrib.auth.models import User

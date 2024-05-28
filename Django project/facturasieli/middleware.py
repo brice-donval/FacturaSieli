@@ -1,4 +1,10 @@
-# facturasieli/middleware.py
+# ---------------------------------------------------------------------------
+#                    F a c t u r a S i e l i   ( 2 0 2 4 )
+# ---------------------------------------------------------------------------
+# File   : facturasieli/middleware.py
+# Author : Team
+# ---------------------------------------------------------------------------
+
 from django.utils import timezone
 
 from facturasieli.models import Profile

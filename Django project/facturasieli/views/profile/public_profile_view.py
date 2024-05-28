@@ -1,4 +1,10 @@
-# facturasieli/views/profile/public_profile_view.py
+# ---------------------------------------------------------------------------
+#                    F a c t u r a S i e l i   ( 2 0 2 4 )
+# ---------------------------------------------------------------------------
+# File   : facturasieli/views/profile/public_profile_view.py
+# Author : Brice
+# ---------------------------------------------------------------------------
+
 from django.contrib.auth.models import User
 from django.http import HttpRequest, HttpResponseRedirect
 from django.shortcuts import get_object_or_404, render

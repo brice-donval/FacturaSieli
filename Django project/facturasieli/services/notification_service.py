@@ -1,4 +1,10 @@
-# facturasieli/services/notification_service.py
+# ---------------------------------------------------------------------------
+#                    F a c t u r a S i e l i   ( 2 0 2 4 )
+# ---------------------------------------------------------------------------
+# File   : facturasieli/services/notification_service.py
+# Author : Arnaud
+# ---------------------------------------------------------------------------
+
 from datetime import datetime
 
 from django.shortcuts import get_object_or_404

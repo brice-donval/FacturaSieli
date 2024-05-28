@@ -1,4 +1,10 @@
-# facturasieli/views/verification/verify_invoice_view.py
+# ---------------------------------------------------------------------------
+#                    F a c t u r a S i e l i   ( 2 0 2 4 )
+# ---------------------------------------------------------------------------
+# File   : facturasieli/views/verification/verify_invoice_view.py
+# Author : Zineb
+# ---------------------------------------------------------------------------
+
 from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse
 from django.shortcuts import get_object_or_404, render

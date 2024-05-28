@@ -1,10 +1,15 @@
-# facturasieli/models/User.py
+# ---------------------------------------------------------------------------
+#                    F a c t u r a S i e l i   ( 2 0 2 4 )
+# ---------------------------------------------------------------------------
+# File   : facturasieli/models/User.py
+# Author : Arnaud, Zineb
+# ---------------------------------------------------------------------------
+
 from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
 from django.utils.translation import gettext_lazy as _
 
-from facturasieli.models.Company import Company
-from facturasieli.models.Role import Role
+from facturasieli.models import Company, Role
 
 
 class User(AbstractBaseUser):

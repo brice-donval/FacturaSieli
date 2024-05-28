@@ -1,4 +1,10 @@
-# facturasieli/views/profile/edit_profile_view.py
+# ---------------------------------------------------------------------------
+#                    F a c t u r a S i e l i   ( 2 0 2 4 )
+# ---------------------------------------------------------------------------
+# File   : facturasieli/views/profile/edit_profile_view.py
+# Author : Brice
+# ---------------------------------------------------------------------------
+
 import os
 
 from django.http import HttpRequest, HttpResponseRedirect

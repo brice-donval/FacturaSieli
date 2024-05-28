@@ -1,4 +1,10 @@
-# facturasieli/urls.py
+# ---------------------------------------------------------------------------
+#                    F a c t u r a S i e l i   ( 2 0 2 4 )
+# ---------------------------------------------------------------------------
+# File   : facturasieli/urls.py
+# Author : Team
+# ---------------------------------------------------------------------------
+
 from django.contrib.auth import views as auth_views
 from django.urls import path
 

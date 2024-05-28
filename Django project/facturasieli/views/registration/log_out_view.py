@@ -1,4 +1,10 @@
-# facturasieli/views/registration/log_out_view.py
+# ---------------------------------------------------------------------------
+#                    F a c t u r a S i e l i   ( 2 0 2 4 )
+# ---------------------------------------------------------------------------
+# File   : facturasieli/views/registration/log_out_view.py
+# Author : Brice
+# ---------------------------------------------------------------------------
+
 from django.contrib.auth import logout
 from django.http import HttpRequest, HttpResponseRedirect
 from django.shortcuts import render

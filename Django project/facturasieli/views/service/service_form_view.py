@@ -1,13 +1,20 @@
-from django.shortcuts import render, redirect,get_list_or_404
+# ---------------------------------------------------------------------------
+#                    F a c t u r a S i e l i   ( 2 0 2 4 )
+# ---------------------------------------------------------------------------
+# File   : facturasieli/views/service/service_form_view.py
+# Author : Morice
+# ---------------------------------------------------------------------------
+
+from django.shortcuts import render, redirect
 from django.utils.translation import gettext_lazy as _
 from django.utils import timezone
 from django.contrib import messages
-from ...models import Service,NotificationType
 
-from facturasieli.forms.ServiceForm import ServiceForm
+from facturasieli.forms import ServiceForm
+from facturasieli.models import NotificationType, Service
 from facturasieli.services.notification_service import send_notification
 
-# Author: Morice
+
 def handle_service(request):
     if request.user.is_authenticated:
         print("Authenticated User:", request.user.id)

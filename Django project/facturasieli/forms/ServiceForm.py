@@ -1,11 +1,16 @@
-# facturasieli/forms/ServiceForm.py
+# ---------------------------------------------------------------------------
+#                    F a c t u r a S i e l i   ( 2 0 2 4 )
+# ---------------------------------------------------------------------------
+# File   : facturasieli/forms/ServiceForm.py
+# Author : Morice
+# ---------------------------------------------------------------------------
+
 from django import forms
 from django.utils.translation import gettext_lazy as _
 
-from facturasieli.models.Service import Service
+from facturasieli.models import Service
 
 
-# Author Morice
 class ServiceForm(forms.ModelForm):
     class Meta:
         model = Service

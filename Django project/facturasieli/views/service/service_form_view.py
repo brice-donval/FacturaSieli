@@ -5,12 +5,12 @@
 # Author : Morice
 # ---------------------------------------------------------------------------
 
+from django.contrib import messages
 from django.shortcuts import render, redirect
 from django.utils.translation import gettext_lazy as _
 from django.utils import timezone
-from django.contrib import messages
 
-from facturasieli.forms import ServiceForm
+from facturasieli.forms.ServiceForm import ServiceForm
 from facturasieli.models import NotificationType, Service
 from facturasieli.services.notification_service import send_notification
 

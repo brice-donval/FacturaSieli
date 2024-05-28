@@ -1,0 +1,40 @@
+<!-- Author morice -->
+{% extends 'base.html' %}
+
+{% load static %}
+{% load i18n %}
+
+{% block content %}   
+    <h2 class="text-center mt-3">{% translate 'Your services' %}</h2>
+    <div class="d-flex justify-content-center mt-4">
+        <div class="w-75">
+            <a href="{% url 'facturasieli:service_form' %}" class="btn btn-warning mb-4">{% translate 'Create' %}</a>
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">{% translate 'Title' %}</th>
+                    <th scope="col">{% translate 'Service creation date' %}</th>
+                    <th scope="col">{% translate 'Company' %}</th>
+                    <th scope="col">{% translate 'Status' %}</th>
+                    <th scope="col"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                    {% if services %}
+                        {% for service in services %}
+                            <tr>
+                                <th scope="row">{{ service.title }}</th>
+                                <td>{{ service.issue_date }}</td>
+                                <td>{{ service.company.name }}</td>
+                                <td>{{ service.status }}</td>
+                                <td><a href="#">{% translate 'Show' %}</a></td>
+                            </tr>
+                        {% endfor %}
+                    {% else %}
+
+                    {% endif %}
+                </tbody>
+              </table>
+        </div>
+    </div>
+{% endblock %}

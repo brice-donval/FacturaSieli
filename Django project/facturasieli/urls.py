@@ -9,7 +9,6 @@ from django.contrib.auth import views as auth_views
 from django.urls import path
 
 from facturasieli import views
-from facturasieli.views.invoice_view import invoice_view, invoice_success
 
 
 app_name = 'facturasieli'
@@ -35,6 +34,6 @@ urlpatterns = [
 
     path('invoices/<int:invoice_id>/verify/', views.verify_invoice_view, name='verify_invoice'),
 
-    path('invoice/', invoice_view, name='invoice_form'),
-    path('invoice/success/', invoice_success, name='invoice_success'),
+    path('invoice/', views.invoice_view, name='invoice_form'),
+    path('invoice/success/', views.invoice_success, name='invoice_success'),
 ]

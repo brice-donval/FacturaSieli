@@ -5,11 +5,13 @@
 # Author : Morice
 # ---------------------------------------------------------------------------
 
+from django.http import HttpResponseRedirect
 from django.shortcuts import get_object_or_404, render
-from django.utils.translation import gettext_lazy as _
-from django.http import  HttpResponseRedirect
-from facturasieli.models import Service
 from django.urls import reverse
+from django.utils.translation import gettext_lazy as _
+
+from facturasieli.models import Service
+
 
 def show_service(request, service_id):
     if not request.user.is_authenticated:

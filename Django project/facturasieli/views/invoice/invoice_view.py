@@ -1,12 +1,14 @@
 # ---------------------------------------------------------------------------
 #                    F a c t u r a S i e l i   ( 2 0 2 4 )
 # ---------------------------------------------------------------------------
-# File   : facturasieli/views/index/__init__.py
+# File   : facturasieli/views/invoice/invoice_view.py
 # Author : Margaux
 # ---------------------------------------------------------------------------
 
 from django.shortcuts import render, redirect
+
 from facturasieli.forms.InvoiceForm import InvoiceForm
+
 
 def invoice_view(request):
     if request.method == 'POST':

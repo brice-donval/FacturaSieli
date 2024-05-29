@@ -1,0 +1,21 @@
+<!---------------------------------------------------------------------------
+#                    F a c t u r a S i e l i   ( 2 0 2 4 )
+# ---------------------------------------------------------------------------
+# File   : facturasieli/templates/facturasieli/invoice_form.html
+# Author : Margaux
+# -------------------------------------------------------------------------->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Invoice Form</title>
+</head>
+<body>
+    <h1>Invoice Form</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

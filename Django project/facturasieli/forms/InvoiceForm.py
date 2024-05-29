@@ -1,6 +1,14 @@
-# facturasieli/forms/InvoiceForm.py
+# ---------------------------------------------------------------------------
+#                    F a c t u r a S i e l i   ( 2 0 2 4 )
+# ---------------------------------------------------------------------------
+# File   : facturasieli/forms/InvoiceForm.py
+# Author : Margaux
+# ---------------------------------------------------------------------------
+
 from django import forms
+
 from facturasieli.models.Invoice import Invoice
+
 
 class InvoiceForm(forms.ModelForm):
     class Meta:

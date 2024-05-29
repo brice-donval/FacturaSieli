@@ -16,9 +16,9 @@ class Invoice(models.Model):
     VERIFIED = 'Verified'
     PAID = 'Paid'
     STATUS_CHOICES = [
-        (1, _('Pending')),
-        (2, _('Verified')),
-        (3, _('Paid'))
+        (1, _(PENDING)),
+        (2, _(VERIFIED)),
+        (3, _(PAID))
     ]
 
     invoice_number = models.IntegerField(_("Invoice Number"))

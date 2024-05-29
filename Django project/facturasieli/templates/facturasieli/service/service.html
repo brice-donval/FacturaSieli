@@ -1,7 +1,7 @@
 <!---------------------------------------------------------------------------
 #                    F a c t u r a S i e l i   ( 2 0 2 4 )
 # ---------------------------------------------------------------------------
-# File   : facturasieli/templates/facturasieli/service.html
+# File   : facturasieli/templates/facturasieli/service/service.html
 # Author : Morice
 # -------------------------------------------------------------------------->
 
@@ -34,7 +34,7 @@
                                 <td>{{ service.issue_date }}</td>
                                 <td>{{ service.company.name }}</td>
                                 <td>{{ service.status }}</td>
-                                <td><a href="#">{% translate 'Show' %}</a></td>
+                                <td><a href="{% url 'facturasieli:show_service' 2 %}">{% translate 'Show' %}</a></td>
                             </tr>
                         {% endfor %}
                     {% else %}

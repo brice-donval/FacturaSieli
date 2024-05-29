@@ -7,11 +7,14 @@
 
 from django.shortcuts import get_object_or_404, render
 from django.utils.translation import gettext_lazy as _
-
+from django.http import  HttpResponseRedirect
 from facturasieli.models import Service
-
+from django.urls import reverse
 
 def show_service(request, service_id):
+    if not request.user.is_authenticated:
+        return HttpResponseRedirect(reverse('facturasieli:custom_log_in'))
+
     service = get_object_or_404(Service, id = service_id)
     context = {'service':service}
-    return render(request, 'facturasieli/show_service.html', context)
+    return render(request, 'facturasieli/service/show_service.html', context)

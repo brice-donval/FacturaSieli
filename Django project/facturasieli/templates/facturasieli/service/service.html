@@ -34,7 +34,7 @@
                                 <td>{{ service.issue_date }}</td>
                                 <td>{{ service.company.name }}</td>
                                 <td>{{ service.status }}</td>
-                                <td><a href="#">{% translate 'Show' %}</a></td>
+                                <td><a href="{% url 'facturasieli:show_service' 2 %}">{% translate 'Show' %}</a></td>
                             </tr>
                         {% endfor %}
                     {% else %}

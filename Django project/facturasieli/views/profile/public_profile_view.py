@@ -19,7 +19,7 @@ def public_profile(request: HttpRequest, user_id):
         return HttpResponseRedirect(reverse('facturasieli:custom_log_in'))
 
     user_to_show = get_object_or_404(User, pk=user_id)
-    profile_to_show = get_object_or_404(Profile, user=user_to_show.id)
+    profile_to_show = get_object_or_404(Profile, email=user_to_show)
 
     context = {
         'profile': profile_to_show,

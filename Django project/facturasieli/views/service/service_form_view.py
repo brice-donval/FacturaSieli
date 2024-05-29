@@ -9,13 +9,16 @@ from django.contrib import messages
 from django.shortcuts import render, redirect
 from django.utils.translation import gettext_lazy as _
 from django.utils import timezone
-
+from django.http import  HttpResponseRedirect
 from facturasieli.forms.ServiceForm import ServiceForm
 from facturasieli.models import NotificationType, Service
 from facturasieli.services.notification_service import send_notification
-
+from django.urls import reverse
 
 def handle_service(request):
+    if not request.user.is_authenticated:
+        return HttpResponseRedirect(reverse('facturasieli:custom_log_in'))
+
     if request.user.is_authenticated:
         print("Authenticated User:", request.user.id)
     else:
@@ -54,4 +57,4 @@ def handle_service(request):
     else:
         form = ServiceForm()
 
-    return render(request, 'facturasieli/service_form.html', {"form": form})
+    return render(request, 'facturasieli/service/service_form.html', {"form": form})

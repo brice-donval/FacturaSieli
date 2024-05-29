@@ -7,9 +7,8 @@
 
 from django.contrib import admin
 
-from facturasieli.models import Profile, Invoice
+from facturasieli.models import Invoice, Profile
 
 
-admin.site.register((Profile))
-#
+admin.site.register(Profile)
 admin.site.register(Invoice)

@@ -6,14 +6,16 @@
 # ---------------------------------------------------------------------------
 
 from django.contrib import messages
-from django.shortcuts import render, redirect
-from django.utils.translation import gettext_lazy as _
+from django.http import HttpResponseRedirect
+from django.shortcuts import redirect, render
+from django.urls import reverse
 from django.utils import timezone
-from django.http import  HttpResponseRedirect
+from django.utils.translation import gettext_lazy as _
+
 from facturasieli.forms.ServiceForm import ServiceForm
 from facturasieli.models import NotificationType, Service
 from facturasieli.services.notification_service import send_notification
-from django.urls import reverse
+
 
 def handle_service(request):
     if not request.user.is_authenticated:

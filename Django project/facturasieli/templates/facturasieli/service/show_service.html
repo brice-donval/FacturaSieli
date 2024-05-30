@@ -98,7 +98,7 @@
                 {% else %}
                 <div>
                     <p>No invoice registered yet.</p>
-                    <a href="{% url 'invoice' service.id %}" class="btn btn-warning mb-4">{% translate 'Create' %}</a>
+                    <a href="{% url 'facturasieli:invoice' service.id %}" class="btn btn-warning mb-4">{% translate 'Create' %}</a>
                 </div>
                 {% endif %}
             </div>

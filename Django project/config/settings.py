@@ -1,4 +1,10 @@
-# config/settings.py
+# ---------------------------------------------------------------------------
+#                    F a c t u r a S i e l i   ( 2 0 2 4 )
+# ---------------------------------------------------------------------------
+# File   : config/settings.py
+# Author : Team
+# ---------------------------------------------------------------------------
+
 """
 Django settings for config project.
 
@@ -15,6 +21,7 @@ import os
 from pathlib import Path
 
 from django.utils.translation import gettext_lazy as _
+from django.contrib.messages import constants as message_constants
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -155,3 +162,13 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 EMAIL_HOST = 'localhost'
 EMAIL_PORT = 1025
+
+# Message tag in-app
+MESSAGE_TAGS = {
+    message_constants.DEBUG: 'debug',
+    message_constants.INFO: 'info',
+    message_constants.SUCCESS: 'success',
+    message_constants.WARNING: 'warning',
+    message_constants.WARNING: 'warning',
+    message_constants.ERROR: 'danger', 
+}

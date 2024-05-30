@@ -1,4 +1,10 @@
-# facturasieli/middleware.py
+# ---------------------------------------------------------------------------
+#                    F a c t u r a S i e l i   ( 2 0 2 4 )
+# ---------------------------------------------------------------------------
+# File   : facturasieli/middleware.py
+# Author : Team
+# ---------------------------------------------------------------------------
+
 from django.utils import timezone
 
 from facturasieli.models import Profile
@@ -11,7 +17,7 @@ class ProfileMiddleware:
 
     def __call__(self, request):
         if request.user.is_authenticated:
-            profile = Profile.objects.get(user=request.user)
+            profile = Profile.objects.get(email=request.user)
             profile.last_request_timestamp = timezone.now()
             request.profile = profile
         else:

@@ -5,17 +5,18 @@
 # Author : Margaux
 # -------------------------------------------------------------------------->
 
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Invoice Form</title>
-</head>
-<body>
-    <h1>Invoice Form</h1>
+{% extends 'base.html' %}
+
+{% load static %}
+{% load i18n %}
+
+{% block content %} 
+<div class="mt-4">
+    <h3>Invoice Form</h3>
     <form method="post">
         {% csrf_token %}
         {{ form.as_p }}
         <button type="submit">Submit</button>
     </form>
-</body>
-</html>
+</div>
+{% endblock %}

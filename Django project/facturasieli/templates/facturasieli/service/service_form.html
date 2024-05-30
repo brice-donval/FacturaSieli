@@ -21,11 +21,12 @@
                 </div>
             {% endfor %}
         </div>
-    {% endif %}    
+    {% endif %}  
+      
     <h3 class="text-center mt-3">{% translate 'Create a new service' %}</h3>
     <div class="d-flex justify-content-center mt-4">
         <div class="w-75">
-            <a href="{% url 'facturasieli:service' 2 %}" class="btn btn-warning mb-4">{% translate 'Back' %}</a>
+            <a href="{% url 'facturasieli:service' request.profile.id %}" class="btn btn-warning mb-4">{% translate 'Back' %}</a>
             <form action="{% url 'facturasieli:service_form' %}" method="post">
                 {% csrf_token %}
                 {{form.as_p}}

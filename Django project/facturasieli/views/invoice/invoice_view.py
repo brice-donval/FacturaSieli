@@ -6,11 +6,11 @@
 # ---------------------------------------------------------------------------
 
 import logging
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import render, redirect, get_object_or_404,get_list_or_404
 from django.contrib import messages
 from django.urls import reverse
 from facturasieli.forms.InvoiceForm import InvoiceForm
-from facturasieli.models import Service
+from facturasieli.models import Service,Invoice
 
 logger = logging.getLogger(__name__)
 
@@ -22,8 +22,16 @@ def invoice_view(request, service_id):
             invoice = form.save(commit=False)
             invoice.service = service
             invoice.save()
+
+            # service update with the new invoice id.
+            invoice_id= invoice.id
+            service.invoice = get_object_or_404(Invoice, pk=invoice_id) 
+            service.save()
+
             messages.success(request, "Invoice saved successfully.")
-            url = reverse('facturasieli:service', kwargs={'company_id': service.company_provider.id})
+            #redirect towards company services
+    
+            url = reverse('facturasieli:service', kwargs={'company_id': service.company_client.id})
             return redirect(url)
         else:
             logger.error("Form is not valid: %s", form.errors)

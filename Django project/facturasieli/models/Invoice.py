@@ -31,7 +31,7 @@ class Invoice(models.Model):
     status = models.CharField(_("Status"), max_length=50, choices=STATUS_CHOICES)
     provider_address = models.ForeignKey(Address, on_delete=models.CASCADE, related_name='invoices_as_provider')
     client_address = models.ForeignKey(Address, on_delete=models.CASCADE, related_name='invoices_as_client')
-    service = models.ForeignKey('Service', on_delete=models.CASCADE, related_name='related_service_invoice', null=True, blank=True)
+    #service = models.ForeignKey('Service', on_delete=models.CASCADE, related_name='related_service_invoice', null=True, blank=True)
 
     def __str__(self):
         return f'Invoice {self.invoice_number} - {self.status}'

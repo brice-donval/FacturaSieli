@@ -11,3 +11,4 @@ from .registration import *
 from .service import *
 from .verification import *
 from .invoice import *
+from .notification import *

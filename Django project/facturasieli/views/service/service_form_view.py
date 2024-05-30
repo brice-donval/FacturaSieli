@@ -7,7 +7,7 @@
 
 from django.contrib import messages
 from django.http import HttpResponseRedirect
-from django.shortcuts import redirect, render,get_object_or_404
+from django.shortcuts import get_object_or_404, redirect, render
 from django.urls import reverse
 from django.utils import timezone
 from django.utils.translation import gettext_lazy as _
@@ -28,7 +28,7 @@ def handle_service(request):
                 service_data = form.cleaned_data
                 
                 #get the companies envolved
-                company_provider = get_object_or_404(Company,pk=service_data['company_provider'].id)
+                company_provider = get_object_or_404(Company, pk=service_data['company_provider'].id)
                 company_client = get_object_or_404(Company, pk=request.profile.company_id)
 
                 # create the service object

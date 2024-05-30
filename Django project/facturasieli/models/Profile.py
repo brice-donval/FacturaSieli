@@ -44,7 +44,7 @@ class Profile(AbstractBaseUser):
     password = models.CharField(_("Password"), max_length=255)
 
     role = models.ManyToManyField(Role, related_name='users')
-    company = models.OneToOneField(Company, on_delete=models.CASCADE, related_name='employees',null=True)
+    company = models.OneToOneField(Company, on_delete=models.CASCADE, related_name='employees', null=True)
     objects = ProfileManager()
 
     USERNAME_FIELD = 'email'

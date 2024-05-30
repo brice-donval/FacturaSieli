@@ -13,7 +13,7 @@ from facturasieli.models import Company, Notification
 
 
 @staticmethod
-def send_notification(notification_type:str, service_title:str,company_sender_id:int, company_receiver_id:int):
+def send_notification(notification_type:str, service_title:str, company_sender_id:int, company_receiver_id:int):
     company_sender = get_object_or_404(Company, pk=company_sender_id)
     company_receiver = get_object_or_404(Company, pk=company_receiver_id)
 

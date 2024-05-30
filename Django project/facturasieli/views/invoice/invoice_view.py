@@ -7,7 +7,7 @@
 
 from django.shortcuts import render, redirect
 
-from facturasieli.forms.InvoiceForm import InvoiceForm
+from facturasieli.forms import InvoiceForm
 
 
 def invoice_view(request):

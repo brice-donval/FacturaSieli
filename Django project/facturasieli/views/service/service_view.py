@@ -5,9 +5,8 @@
 # Author : Morice
 # ---------------------------------------------------------------------------
 
-from django.contrib import messages
 from django.http import HttpResponseRedirect
-from django.shortcuts import render, get_list_or_404,get_object_or_404
+from django.shortcuts import get_list_or_404, get_object_or_404, render
 from django.urls import reverse
 from django.utils.translation import gettext_lazy as _
 

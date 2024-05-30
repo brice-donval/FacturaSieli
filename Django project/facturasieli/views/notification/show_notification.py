@@ -5,12 +5,12 @@
 # Author : Arnaud
 # ---------------------------------------------------------------------------
 
-from django.http import HttpRequest, HttpResponseRedirect, JsonResponse
-from django.shortcuts import get_list_or_404, get_object_or_404, render
+from django.http import HttpRequest, HttpResponseRedirect
+from django.shortcuts import get_object_or_404, render
 from django.urls import reverse
 from django.utils.translation import gettext_lazy as _
 
-from facturasieli.models import Company, Notification, Profile
+from facturasieli.models import Notification, Profile
 
 
 def show_notification(request: HttpRequest):

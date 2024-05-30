@@ -37,7 +37,6 @@ urlpatterns = [
 
     path('invoice/', views.invoice_view, name='invoice_form'),
     path('invoice/success/', views.invoice_success, name='invoice_success'),
-    
-    path('notification/', views.show_notification, name='show_notification'),
 
+    path('notification/', views.show_notification, name='show_notification'),
 ]

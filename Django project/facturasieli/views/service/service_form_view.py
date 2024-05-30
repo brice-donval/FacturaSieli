@@ -12,8 +12,8 @@ from django.urls import reverse
 from django.utils import timezone
 from django.utils.translation import gettext_lazy as _
 
-from facturasieli.forms.ServiceForm import ServiceForm
-from facturasieli.models import NotificationType, Service,Company
+from facturasieli.forms import ServiceForm
+from facturasieli.models import Company, NotificationType, Service
 from facturasieli.services.notification_service import send_notification
 
 

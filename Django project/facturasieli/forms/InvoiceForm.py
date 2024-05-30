@@ -7,7 +7,7 @@
 
 from django import forms
 
-from facturasieli.models.Invoice import Invoice
+from facturasieli.models import Invoice
 
 
 class InvoiceForm(forms.ModelForm):

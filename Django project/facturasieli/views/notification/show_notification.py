@@ -1,16 +1,16 @@
+# ---------------------------------------------------------------------------
+#                    F a c t u r a S i e l i   ( 2 0 2 4 )
+# ---------------------------------------------------------------------------
+# File   : facturasieli/views/notification/show_notification.py
+# Author : Arnaud
+# ---------------------------------------------------------------------------
 
-# ---------------------------------------------------------------------------#
-#                    F a c t u r a S i e l i   ( 2 0 2 4 )                   #
-# ---------------------------------------------------------------------------#
-# File   : facturasieli/views/notification/show_notification.py              #
-# Author : Arnaud DJIM-ASSEL RIBAR                                           #
-# ---------------------------------------------------------------------------#
-from django.http import HttpRequest, HttpResponseRedirect
-from django.shortcuts import render,  get_object_or_404, get_list_or_404
+from django.http import HttpRequest, HttpResponseRedirect, JsonResponse
+from django.shortcuts import get_list_or_404, get_object_or_404, render
 from django.urls import reverse
 from django.utils.translation import gettext_lazy as _
-from django.http import JsonResponse
-from facturasieli.models import Profile, Notification, Company
+
+from facturasieli.models import Company, Notification, Profile
 
 
 def show_notification(request: HttpRequest):

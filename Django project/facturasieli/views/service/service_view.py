@@ -17,8 +17,11 @@ from facturasieli.models import Service
 def display_service(request,company_id):
     if not request.user.is_authenticated:
         return HttpResponseRedirect(reverse('facturasieli:custom_log_in'))
-    
-    services = get_list_or_404(Service, company_client=company_id)
+    try:
+        services = get_list_or_404(Service, company_client=company_id)
+    except:
+        return HttpResponseRedirect(reverse('facturasieli:service_form'))
+
     return render(request, 'facturasieli/service/service.html', {'services': services})
 
 # delete selected service

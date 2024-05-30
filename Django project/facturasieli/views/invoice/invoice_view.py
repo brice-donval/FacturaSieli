@@ -5,21 +5,33 @@
 # Author : Margaux
 # ---------------------------------------------------------------------------
 
-from django.shortcuts import render, redirect
+import logging
+from django.shortcuts import render, redirect, get_object_or_404
+from django.contrib import messages
+from django.urls import reverse
+from facturasieli.forms.InvoiceForm import InvoiceForm
+from facturasieli.models import Service
 
-from facturasieli.forms import InvoiceForm
+logger = logging.getLogger(__name__)
 
-
-def invoice_view(request):
+def invoice_view(request, service_id):
+    service = get_object_or_404(Service, id=service_id)
     if request.method == 'POST':
         form = InvoiceForm(request.POST)
         if form.is_valid():
-            form.save()
-            return redirect('facturasieli:invoice_success')  # Redirige vers une page de succès après soumission
+            invoice = form.save(commit=False)
+            invoice.service = service
+            invoice.save()
+            messages.success(request, "Invoice saved successfully.")
+            url = reverse('facturasieli:service', kwargs={'company_id': service.company_provider.id})
+            return redirect(url)
+        else:
+            logger.error("Form is not valid: %s", form.errors)
+            messages.error(request, "There were errors in your form. Please correct them and try again.")
     else:
         form = InvoiceForm()
     
-    return render(request, 'facturasieli/invoice_form.html', {'form': form})
+    return render(request, 'facturasieli/invoice_form.html', {'form': form, 'service': service})
 
-def invoice_success(request):
-    return render(request, 'facturasieli/invoice_success.html')
+#def invoice_success(request):
+#    return render(request, 'facturasieli/invoice_success.html')

@@ -5,4 +5,4 @@
 # Author : Margaux
 # ---------------------------------------------------------------------------
 
-from .invoice_view import invoice_success, invoice_view
+from .invoice_view import invoice_view#, invoice_success

@@ -10,6 +10,7 @@ from django.urls import path
 
 from facturasieli import views
 
+from facturasieli.views.invoice.invoice_view import invoice_view
 
 app_name = 'facturasieli'
 urlpatterns = [
@@ -34,9 +35,8 @@ urlpatterns = [
     path('delete_service/<int:service_id>/', views.delete_service, name='delete_service'),
 
     path('invoices/<int:invoice_id>/verify/', views.verify_invoice_view, name='verify_invoice'),
-
-    path('invoice/', views.invoice_view, name='invoice_form'),
-    path('invoice/success/', views.invoice_success, name='invoice_success'),
-
+    
     path('notification/', views.show_notification, name='show_notification'),
+    #marg
+    path('invoice/<int:service_id>/', invoice_view, name='invoice_form'),
 ]

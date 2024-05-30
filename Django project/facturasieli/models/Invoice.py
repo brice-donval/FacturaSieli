@@ -7,8 +7,7 @@
 
 from django.db import models
 from django.utils.translation import gettext_lazy as _
-
-from facturasieli.models import Address
+from facturasieli.models import Address, Service
 
 
 class Invoice(models.Model):
@@ -16,9 +15,9 @@ class Invoice(models.Model):
     VERIFIED = 'Verified'
     PAID = 'Paid'
     STATUS_CHOICES = [
-        (1, _(PENDING)),
-        (2, _(VERIFIED)),
-        (3, _(PAID))
+        (PENDING, _('Pending')),
+        (VERIFIED, _('Verified')),
+        (PAID, _('Paid'))
     ]
 
     invoice_number = models.IntegerField(_("Invoice Number"))
@@ -32,6 +31,7 @@ class Invoice(models.Model):
     status = models.CharField(_("Status"), max_length=50, choices=STATUS_CHOICES)
     provider_address = models.ForeignKey(Address, on_delete=models.CASCADE, related_name='invoices_as_provider')
     client_address = models.ForeignKey(Address, on_delete=models.CASCADE, related_name='invoices_as_client')
+    service = models.ForeignKey('Service', on_delete=models.CASCADE, related_name='related_service_invoice', null=True, blank=True)
 
     def __str__(self):
         return f'Invoice {self.invoice_number} - {self.status}'

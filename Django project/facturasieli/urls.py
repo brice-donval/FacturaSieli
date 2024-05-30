@@ -33,10 +33,10 @@ urlpatterns = [
     path('show_service/<int:service_id>/', views.show_service, name='show_service'),
     path('delete_service/<int:service_id>/', views.delete_service, name='delete_service'),
 
-    path('invoices/<int:invoice_id>/verify/', views.verify_invoice_view, name='verify_invoice'),
-
     path('invoice/', views.invoice_view, name='invoice_form'),
     path('invoice/success/', views.invoice_success, name='invoice_success'),
 
     path('notification/', views.show_notification, name='show_notification'),
+    path('invoices/<int:invoice_id>/', views.verify_invoice_view, name='verify_invoice'),
+    path('invoices/verification/', views.verify_invoice_list_view, name='verification_list'),
 ]

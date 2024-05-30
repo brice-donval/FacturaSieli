@@ -6,3 +6,4 @@
 # ---------------------------------------------------------------------------
 
 from .verify_invoice_view import verify_invoice_view
+from .verify_invoice_list_view import verify_invoice_list_view

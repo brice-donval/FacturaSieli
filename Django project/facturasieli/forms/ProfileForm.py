@@ -29,14 +29,9 @@ class ProfileForm(forms.ModelForm):
         return password2
 
     def save(self, commit=True):
-        profile = Profile.objects.create_user(
-            email=self.cleaned_data['email'],
-            first_name=self.cleaned_data['first_name'],
-            last_name=self.cleaned_data['last_name'],
-            password=self.cleaned_data['password1'],
-            company=self.cleaned_data['company']
-        )
-        
-        profile.save()
-        #self.save_m2m()  # Save the many-to-many data for roles
+        profile = super().save(commit=False)
+        profile.set_password(self.cleaned_data["password1"])
+        if commit:
+            profile.save()
+            self.save_m2m()  # Save the many-to-many data for roles
         return profile

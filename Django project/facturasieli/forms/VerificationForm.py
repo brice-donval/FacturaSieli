@@ -21,3 +21,4 @@ class VerificationForm(forms.ModelForm):
     ]
 
     status = forms.ChoiceField(choices=STATUS_CHOICES, widget=forms.RadioSelect)
+    

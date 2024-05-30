@@ -7,17 +7,23 @@
 
 from django.contrib import messages
 from django.http import HttpResponseRedirect
-from django.shortcuts import render, get_list_or_404
+from django.shortcuts import render, get_list_or_404,get_object_or_404
 from django.urls import reverse
 from django.utils.translation import gettext_lazy as _
 
 from facturasieli.models import Service
 
-
+# display the user service list
 def display_service(request,company_id):
     if not request.user.is_authenticated:
         return HttpResponseRedirect(reverse('facturasieli:custom_log_in'))
     
     services = get_list_or_404(Service, company_client=company_id)
-    print(services)
+    return render(request, 'facturasieli/service/service.html', {'services': services})
+
+# delete selected service
+def delete_service(request,service_id):
+    service = get_object_or_404(Service, pk=service_id)
+    service.delete()
+    services = get_list_or_404(Service, company_client=request.profile.company)
     return render(request, 'facturasieli/service/service.html', {'services': services})

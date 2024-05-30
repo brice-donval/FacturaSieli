@@ -22,6 +22,7 @@ from facturasieli.views.profile import edit_profile
 
 from facturasieli.views.service import handle_service
 from facturasieli.views.service import display_service
+from facturasieli.views.service import delete_service
 
 from facturasieli.views.verification import verify_invoice_view
 from facturasieli.views.invoice import invoice_view, invoice_success

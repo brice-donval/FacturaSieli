@@ -6,9 +6,9 @@
 # ---------------------------------------------------------------------------
 
 from .index import *
+from .invoice import *
+from .notification import *
 from .profile import *
 from .registration import *
 from .service import *
 from .verification import *
-from .invoice import *
-from .notification import *

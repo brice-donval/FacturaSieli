@@ -13,16 +13,10 @@ from facturasieli.models import Address
 
 class Invoice(models.Model):
     STATUS_CHOICES = [
-<<<<<<< Updated upstream
-        (1, _(PENDING)),
-        (2, _(VERIFIED)),
-        (3, _(PAID))
-=======
         (1, _('Pending')),
         (2, _('Verified')),
         (3, _('Rejected')),
         (4, _('Paid'))
->>>>>>> Stashed changes
     ]
 
     invoice_number = models.IntegerField(_("Invoice Number"))

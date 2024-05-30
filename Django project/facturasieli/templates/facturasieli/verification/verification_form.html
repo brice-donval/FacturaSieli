@@ -5,17 +5,13 @@
 # Author : Zineb
 # -------------------------------------------------------------------------->
 
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Verify Invoice</title>
-</head>
-<body>
+{% extends 'base.html' %}
+
+{% block content %}
     <h3>Verify Invoice {{ invoice.invoice_number }}</h3>
     <form method="post">
         {% csrf_token %}
         {{ form.as_p }}
         <button type="submit">Submit</button>
     </form>
-</body>
-</html>
+{% endblock %}

@@ -65,7 +65,7 @@
                 <th scope="col">{% translate 'Invoice Number' %}</th>
                 <th scope="col">{% translate 'Issue date' %}</th>
                 <th scope="col">{% translate 'Due date' %}</th>
-                <th scope="col">{% translate 'Customer' %}</th>
+                <th scope="col">{% translate 'Provider' %}</th>
                 <th scope="col">{% translate 'Amount' %}</th>
                 <th scope="col">{% translate 'Status' %}</th>
                 <th scope="col"></th>
@@ -77,7 +77,7 @@
                             <th scope="row">{{ invoice.invoice_number }}</th>
                             <td>{{ invoice.issue_date }}</td>
                             <td>{{ invoice.due_date }}</td>
-                            <td>{{ invoice.name_client }}</td>
+                            <td>{{ invoice.name_provider }}</td>
                             <td>{{ invoice.amount_excluding_tax }}</td>
                             <td>{{ invoice.status }}</td>
                             <td><a href="{% url 'facturasieli:invoice_details' invoice.id %}">

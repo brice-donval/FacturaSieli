@@ -35,6 +35,10 @@ urlpatterns = [
 
     path('invoices/<int:invoice_id>/verify/', views.verify_invoice_view, name='verify_invoice'),
 
+    # Added by Nabil
+    path('list_invoices/<int:company_id>/', views.list_invoices, name='list_invoices'),
+    path('invoice_details/<int:invoice_id>/', views.invoice_details, name='invoice_details'),
+
     path('invoice/', views.invoice_view, name='invoice_form'),
     path('invoice/success/', views.invoice_success, name='invoice_success'),
     

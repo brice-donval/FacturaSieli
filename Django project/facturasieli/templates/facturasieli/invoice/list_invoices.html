@@ -1,0 +1,102 @@
+<!---------------------------------------------------------------------------
+#                    F a c t u r a S i e l i   ( 2 0 2 4 )
+# ---------------------------------------------------------------------------
+# File   : facturasieli/templates/facturasieli/invoice/list_invoices.html
+# Author : Nabil
+# -------------------------------------------------------------------------->
+
+{% extends 'base.html' %}
+
+{% load static %}
+{% load i18n %}
+
+{% block content %}
+
+<div class="mt-4">   
+    <h3 class="text-center mt-3">{% translate 'Your outgoing invoices' %}</h3>
+    {% if outgoing_invoices %}
+    <div class="d-flex justify-content-center mt-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                <th scope="col">{% translate 'Invoice Number' %}</th>
+                <th scope="col">{% translate 'Issue date' %}</th>
+                <th scope="col">{% translate 'Due date' %}</th>
+                <th scope="col">{% translate 'Customer' %}</th>
+                <th scope="col">{% translate 'Amount' %}</th>
+                <th scope="col">{% translate 'Status' %}</th>
+                <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                    {% for invoice in outgoing_invoices %}
+                        <tr>
+                            <th scope="row">{{ invoice.invoice_number }}</th>
+                            <td>{{ invoice.issue_date }}</td>
+                            <td>{{ invoice.due_date }}</td>
+                            <td>{{ invoice.name_client }}</td>
+                            <td>{{ invoice.amount_excluding_tax }}</td>
+                            <td>{{ invoice.status }}</td>
+                            <td><a href="{% url 'facturasieli:invoice_details' invoice.id %}">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye-fill" viewBox="0 0 16 16">
+                                    <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0"/>
+                                    <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8m8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7"/>
+                                </svg>
+                            </a></td>
+                        </tr>
+                    {% endfor %}
+                {% else %}
+                <div>
+                    <p>No invoice registered yet.</p>
+                </div>
+                {% endif %}
+            </tbody>
+        </table>
+    </div>
+
+
+    <h3 class="text-center mt-3">{% translate 'Your incoming invoices' %}</h3>
+    <div class="d-flex justify-content-center mt-4">
+        
+        {% if incoming_invoices %}
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                <th scope="col">{% translate 'Invoice Number' %}</th>
+                <th scope="col">{% translate 'Issue date' %}</th>
+                <th scope="col">{% translate 'Due date' %}</th>
+                <th scope="col">{% translate 'Customer' %}</th>
+                <th scope="col">{% translate 'Amount' %}</th>
+                <th scope="col">{% translate 'Status' %}</th>
+                <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                    {% for invoice in incoming_invoices %}
+                        <tr>
+                            <th scope="row">{{ invoice.invoice_number }}</th>
+                            <td>{{ invoice.issue_date }}</td>
+                            <td>{{ invoice.due_date }}</td>
+                            <td>{{ invoice.name_client }}</td>
+                            <td>{{ invoice.amount_excluding_tax }}</td>
+                            <td>{{ invoice.status }}</td>
+                            <td><a href="{% url 'facturasieli:invoice_details' invoice.id %}">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye-fill" viewBox="0 0 16 16">
+                                    <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0"/>
+                                    <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8m8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7"/>
+                                </svg>
+                            </a></td>
+                        </tr>
+                    {% endfor %}
+                {% else %}
+                <div>
+                    <p>No invoice registered yet.</p>
+                </div>
+                {% endif %}
+            </tbody>
+        </table>
+    </div>
+
+</div>  
+{% endblock %}
+
